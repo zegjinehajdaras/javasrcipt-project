@@ -1,0 +1,54 @@
+:root {
+    --light-orange:
+    #FCEBD5 ;
+    --light_brown: #edd5bb;
+    --light-red: #e09686;
+    --white: #e5e5e5;
+    --brown: #a16a5e;
+    --red: #d44c2e;
+    --blue: #1b59ac;
+    --green: #1bac6f;
+    --dark-grey: #5a5a5a;
+    --ligth-grey: #b9b9b9;
+    --whitee: #ffffff66;
+  }
+  body{
+    background-color: var(--light_brown);
+    height: 100vh;
+  }
+.btn.edit-button{
+  background-color: var(--light-orange);
+  color: var(--brown);
+}
+.btn.remove-button{
+  background-color: var(--red);
+  border: none;
+  color: var(--light-orange);
+}
+.btn.toggle-button{
+  background-color: var(--green);
+  color: var(--white);
+}
+.btn.add{
+  background-color: var(--red);
+  color: var(--light-orange);
+}
+.btn.cancel{
+  background-color: var(--ligth-grey);
+}
+.modal-header{
+  background-color: var(--light-orange);
+}
+.wrapper{
+  background-color: transparent;
+}
+.secondDiv{
+  text-align: center;
+  width: 80%;
+padding: 30px;
+  border: 2px dotted var(--brown);
+}
+.btn.add_item{
+  color: var(--brown);
+  font-size: 2em;
+}

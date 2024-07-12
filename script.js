@@ -7,26 +7,40 @@ function getArtistName() {
     .then((response) => response.json())
     .then((data) => createList(data))
     .catch((error) => console.log(`error`, error));
+   
 }
 
 function createList(response) {
   const select= document.getElementById("artistList");
- 
+ const artistName = []
   select.innerHTML = '<option>Choose</option>';
   
   for (let i = 0; i < response.length; i++) {
     const option = document.createElement('option')
-    option.value = response[i].name;
-    option.textContent = response[i].name;
-  //  option.classList.add('dropdown-item',)
+
+    artistNames = response[i].name
+    artistName.push(artistNames)
+    option.value = artistNames
+  option.textContent = artistNames
     select.appendChild(option)
+    // option.appendChild(listitem)
     
   }
-//  select.innerHTML = "";
+  localStorage.setItem('artistNames', JSON.stringify(artistName));
 }
 
 const select = document.getElementById("artistList");
 select.addEventListener("click", function () {
   getArtistName();
-  console.log('clikc')
+  const selectArtist = this.value
+  if(selectArtist !== 'Choose'){
+     localStorage.setItem('selectedArtisstName',selectArtist)
+     redirectToPage(selectArtist);
+  }
+ 
+
+
 });
+function redirectToPage(artistName) {
+  window.location.href = `artist_home.html?artist=${encodeURIComponent(artistName)}`;
+}

@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --light-orange:
+  #FCEBD5 ;
+  --light_brown: #edd5bb;
+  --light-red: #e09686;
+  --white: #e5e5e5;
+  --brown: #a16a5e;
+  --red: #d44c2e;
+  --blue: #1b59ac;
+  --green: #1bac6f;
+  --dark-grey: #5a5a5a;
+  --ligth-grey: #b9b9b9;
+  --whitee: #ffffff66;
+}
+p{
+  font-size: 40px;
+}
+.landing_page-header{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.wrapper{
+  justify-content: flex-start;
+}
+.navbar{
+  padding-left: 140px;
+  text-align: right;
+  justify-content: space-between;
+}
+.landing_page-header li a{
+    font-family: 'Roboto, sans-serif';
+    color: var(--brown)!important;
+    font-size: 2em;
+   
+}
+.sold_income{
+  margin: auto;
+  align-items: center;
+  text-align: center;
+ 
+}
+.sold_item{
+  background-color: var(--brown);
+  margin-right: 10px;
+  height: 150px;
+  color: var(--light-orange);
+  font-family:"Roboto, sans-serif" ;
+  font-weight: normal;
+ 
+}
+.total_income{
+  background-color: var(--brown);
+  height: 150px;
+  color: var(--light-orange);
+  font-family:"Roboto, sans-serif" ;
+  font-weight: normal;
+
+
+}
+.row.auctioning_item{
+  background-color: var(--red);
+  color: var(--light-orange);
+  margin: 40px auto;
+  height: 150px;
+  width: 80%;
+  text-align: center;
+  font-weight: normal;
+  font-family: 'Roboto, sans-serif';
+
+
+}
+@media (max-width: 768px) {
+  .wrapper {
+    height: auto;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .landing_page-header h1 {
+    font-size: 3em;
+  }
+  .content h4 {
+    font-size: 3em;
+  }
+  .main_shape {
+    margin-top: 15px;
+  }
+}
