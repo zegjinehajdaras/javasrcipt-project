@@ -1,12 +1,13 @@
-const items = JSON.parse(localStorage.getItem("items"));
+
+const items = JSON.parse(localStorage.getItem("items"))||[];
 const itemTypes = ["painting", "sculpture", "digital", "custom"];
 // console.log(items,itemTypes)
 function createCradItem(items) {
   const divContainer = document.getElementById("panitingContainer");
   divContainer.innerHTML = "";
-  const publishItem = items.filter((item) => item.isPublished === true);
+
   divContainer.innerHTML = "";
-  publishItem.forEach((item, i) => {
+  items.forEach((item, i) => {
     const cardContainer = document.createElement("div");
     cardContainer.setAttribute("class", "col col-lg-4");
     let bgClass = "";
@@ -60,7 +61,6 @@ artistName.innerHTML = "<option>Choose</option>";
 const nameofArtist = JSON.parse(localStorage.getItem("artistNames"));
 nameofArtist.forEach((name) => {
   const option = document.createElement("option");
-  option.value = "choose";
   option.textContent = name;
   artistName.appendChild(option);
 });
@@ -69,19 +69,23 @@ nameofArtist.forEach((name) => {
 
 const btn = document.getElementById("filterPictureModal");
 btn.addEventListener("click", function () {
+  const itemTitle = document.getElementById("itemTitle").value.trim().toLowerCase();
+    const artistSelection = document.getElementById("artistList").value;
+    const minPrice = parseFloat(document.getElementById("minprice").value) || 0;
+    const maxPrice = parseFloat(document.getElementById("maxprice").value) || Infinity;
+    const typeSelection = document.getElementById("typeofpicture").value;
 
-    const itemtitle = document.getElementById("itemTitle").value.toLowerCase();
-     const artistselection = document.getElementById('artistList').value;
-    console.log(artistselection)
-    const filterCards = items.filter((item) =>{
-     const filterBytitle =item.title.toLowerCase().includes(itemtitle);
-    
-  return filterBytitle
-  
-    } )
-
-  
+    const publishItem = items.filter((item) => item.isPublished === true );
+    const filterCards = publishItem.filter((item) => {
+      const filterByTitle = item.title.trim().toLowerCase().includes(itemTitle);
+      const filterByArtist = artistSelection === "Choose" || item.artist === artistSelection;
+      const filterByPrice = item.price >= minPrice && item.price <= maxPrice;
+      const filterByType = typeSelection === "Choose" || item.type === typeSelection;
+      return filterByTitle && filterByArtist && filterByPrice && filterByType;
+ 
+  })
+ 
 
   createCradItem(filterCards);
 });
-createCradItem(items);
+createCradItem(items.filter((item) => item.isPublished === true ));

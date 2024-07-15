@@ -14,6 +14,31 @@
   --ligth-grey: #b9b9b9;
   --whitee: #ffffff66;
 }
+body,
+html {
+  margin: 0;
+  padding: 0;
+  /* height: 100vh; */
+  font-family: "Roboto", sans-serif;
+  background-color: var(--light-orange);
+}
+.container-fluid {
+  background-color: var(--light-orange);
+}
+.wrapper {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  /* justify-content: space-between; */
+  margin: auto;
+  font-family: "Reenie Beanie";
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: 100px;
+}
+.landing_page-header h1 {
+  font-size: 5em;
+  color: var(--brown);
+}
 p{
   font-size: 40px;
 }

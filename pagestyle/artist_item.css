@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+    --light-orange:
+    #FCEBD5 ;
+    --light_brown: #edd5bb;
+    --light-red: #e09686;
+    --white: #e5e5e5;
+    --brown: #a16a5e;
+    --red: #d44c2e;
+    --blue: #1b59ac;
+    --green: #1bac6f;
+    --dark-grey: #5a5a5a;
+    --ligth-grey: #b9b9b9;
+    --whitee: #ffffff66;
+  }
+ 
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    /* height: 100vh; */
+    font-family: "Roboto", sans-serif;
+  }
+  .container-fluid {
+    background-color: var(--light-orange);
+  }
+  .wrapper {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    /* justify-content: space-between; */
+    margin: auto;
+    font-family: "Reenie Beanie";
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    height: 100px;
+  }
+  .landing_page-header h1 {
+    font-size: 5em;
+    color: var(--brown);
+  }
+  p{
+    font-size: 40px;
+  }
+  .landing_page-header{
+      display: flex;
+      justify-content: space-between;
+      
+  }
+  .wrapper{
+    justify-content: flex-start;
+  }
+  .navbar{
+    padding-left: 140px;
+    text-align: right;
+    justify-content: space-between;
+  }
+  .landing_page-header li a{
+      font-family: 'Roboto, sans-serif';
+      color: var(--brown)!important;
+      font-size: 2em;
+     
+  }
+.btn.edit-button{
+  background-color: var(--light-orange);
+  color: var(--brown);
+}
+.btn.remove-button{
+  background-color: var(--red);
+  border: none;
+  color: var(--light-orange);
+}
+.btn.toggle-button{
+  background-color: var(--green);
+  color: var(--white);
+}
+.btn.add{
+  background-color: var(--red);
+  color: var(--light-orange);
+}
+.btn.cancel{
+  background-color: var(--ligth-grey);
+}
+.modal-header{
+  background-color: var(--light-orange);
+}
+.wrapper{
+  background-color: transparent;
+}
+.secondDiv{
+  text-align: center;
+  width: 80%;
+padding: 30px;
+  border: 2px dotted var(--brown);
+}
+.btn.add_item{
+  color: var(--brown);
+  font-size: 2em;
+}
+.bg_even {
+  background-color: var(--light-orange) !important;
+}
+.bg_odd {
+  background-color: var(--brown) !important;
+}
+#panitingContainer {
+  background-color: var(--light_brown);
+}
+.text_even {
+  color: var(--brown);
+}
+.text_odd {
+  color: var(--light-orange);
+}
+.priceeven {
+  background-color: var(--brown);
+}
+.priceodd {
+  background-color: var(--light-orange);
+}
+.pricetexteven {
+  color: var(--light-orange);
+}
+.pricetextodd {
+  color: var(--brown);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .landing_page-header h1 {
+    font-size: 3em;
+  }
+  .content h4 {
+    font-size: 3em;
+  }
+  .main_shape {
+    margin-top: 15px;
+  }
+}
