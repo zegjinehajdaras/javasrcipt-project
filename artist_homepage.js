@@ -1,3 +1,4 @@
+// fshiji variables qe nuk i perdor psh kete itemTypes qe ke importuar dhe ate divContainer tek rreshti 5
 import { items, itemTypes } from "./documents/items.js";
 
 const header = document.getElementById("artistselectName");
@@ -10,7 +11,9 @@ header.textContent = storedName;
 //
 const artistItems = items.filter((item) => item.artist === storedName);
 console.log(artistItems);
+// Ketu shto kushtin item.dateSold!==null && item.priceSold !== null qe te kapesh dhe rastet kur mund te kete gabim ne database 
 const soldItems = artistItems.filter((item) => item.dateSold !== null);
+
 function calculateTotalItemsSold(items) {
   return `${soldItems.length}/${items.length}`;
 }

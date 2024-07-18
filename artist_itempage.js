@@ -118,21 +118,22 @@ function openModal(mode, item) {
 document.getElementById("addNewItemBtn").addEventListener("click", (e) => {
   e.preventDefault();
 
-  const titleinput = document.getElementById("picture-title").value;
-  const descinput = document.getElementById("picture-description").value;
-  const type = document.getElementById("picture-type").value;
-  const imageinput = document.getElementById("picture-image").value;
-  const priceinput = document.getElementById("picture-price").value;
-  const isPublishedCheckbox = document.getElementById("isPublished").checked;
+  const titleinput = document.getElementById('picture-title').value;
+  const descinput = document.getElementById('picture-description').value;
+  //kete type beje select dhe perdor itemTypes array qe e ke tek documents folder => items.js, mos e ler text input
+  const type = document.getElementById('picture-type').value;
+  const imageinput = document.getElementById('picture-image').value;
+  const priceinput = document.getElementById('picture-price').value;
+  const isPublishedCheckbox = document.getElementById('isPublished').checked;
 
-  if (currentMode === "edit") {
+  if (currentMode === 'edit') {
     const item = items.find((item) => item.id === currentItemId);
-    item.title =titleinput
-    item.description =descinput
-    item.type = type
-    item.image = imageinput
-    item.price = priceinput
-    item.isPublished =isPublishedCheckbox
+    item.title = titleinput;
+    item.description = descinput;
+    item.type = type;
+    item.image = imageinput;
+    item.price = priceinput;
+    item.isPublished = isPublishedCheckbox;
   } else {
     const newItem = {
       id: items.length + 1,
@@ -150,9 +151,10 @@ document.getElementById("addNewItemBtn").addEventListener("click", (e) => {
     items.push(newItem);
   }
 
-  localStorage.setItem("items", JSON.stringify(items));
+  localStorage.setItem('items', JSON.stringify(items));
   createCards();
-  document.getElementById("addeditForm").reset();
+  //pervecse ben reset form, bej dhe mbylljen automatikisht te modalit edit dhe add pasi kryen keto veprimet per ux me te mire
+  document.getElementById('addeditForm').reset();
 });
 createCards();
 

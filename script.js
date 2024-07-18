@@ -12,14 +12,16 @@ function getArtistName() {
 
 function createList(response) {
   const select= document.getElementById("artistList");
- const artistName = []
+ const artistName = [] // emrin e kesaj beje const allArtistsNames = []
   select.innerHTML = '<option>Choose</option>';
   
   for (let i = 0; i < response.length; i++) {
     const option = document.createElement('option')
 
+    // kete variablin ketu e ke te padeklaruar, shkruaj :
+    // let artistName = response[i].name - beji emrat e variablave me te dallueshme qe mos ngaterrohesh
     artistNames = response[i].name
-    artistName.push(artistNames)
+    artistName.push(artistNames) // dhe ketu behet allArtistsNames.push(artistName)
     option.value = artistNames
   option.textContent = artistNames
     select.appendChild(option)
