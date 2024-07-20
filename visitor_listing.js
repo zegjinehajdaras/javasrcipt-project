@@ -1,7 +1,6 @@
 
 const items = JSON.parse(localStorage.getItem("items"))||[];
 const itemTypes = ["painting", "sculpture", "digital", "custom"];
-// console.log(items,itemTypes)
 function createCradItem(items) {
   const divContainer = document.getElementById("panitingContainer");
   divContainer.innerHTML = "";

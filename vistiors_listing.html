@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Visitor page</title>
-   <link rel="stylesheet" href="/pagestyle/visitor_isting.css">
+  <link rel="stylesheet" href="/pagestyle/visitor_isting.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +31,11 @@
         <img src="images/logo_2.png" alt="Rightlogo">
       </div>
 
+    </div>
+    <div class="col-auto ">
+      <button id="filterPicture" class="btn " data-bs-toggle="modal" data-bs-target="#movieModal">
+        <img src="images/filter_image.png" class="rounded float-end" alt="">
+      </button>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="movieModal" tabindex="-1" aria-labelledby="movieModalLabel" aria-hidden="true">
@@ -70,7 +75,7 @@
                 <label for="artistName" class="form-label">By Artist</label>
 
                 <select name="artistname" id="artistList">
-                  <!-- <option class="chooseArist">Choose</option> -->
+
                 </select>
 
               </div>
@@ -88,18 +93,17 @@
               <div class="mb-5">
                 <label for="typeofpicture" class="form-label">By Type</label>
                 <select name="typeof" id="typeofpicture">
-                  <!-- <option class="typeofpicture">Choose</option> -->
+
                 </select>
               </div>
             </form>
             <div class="modal-footer">
               <div class="check_logoModal">
-               
-                <button id="filterPictureModal"  class=" float-end width-100"  data-bs-dismiss="modal"
-                aria-label="Close">
-                   <img src="images/check_logo.png" alt="filterimage">
+
+                <button id="filterPictureModal" class=" float-end width-100" data-bs-dismiss="modal" aria-label="Close">
+                  <img src="images/check_logo.png" alt="filterimage">
                 </button>
-               
+
               </div>
 
             </div>
@@ -112,14 +116,6 @@
 
 
     <div id="panitingContainer" class="row mt-5">
-
-
-    </div>
-    <div class="col-auto float-end">
-      <!-- <button id="searchMovies" class="btn btn-primary">Search</button> -->
-      <button id="filterPicture" class="btn " data-bs-toggle="modal" data-bs-target="#movieModal">
-        <img src="images/filter_image.png" class="rounded float-end" alt="">
-      </button>
     </div>
 
 

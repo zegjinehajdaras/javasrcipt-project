@@ -84,6 +84,9 @@
 .modal-header{
   background-color: var(--light-orange);
 }
+.modal-body{
+  background-color: var(--brown);
+}
 .wrapper{
   background-color: transparent;
 }

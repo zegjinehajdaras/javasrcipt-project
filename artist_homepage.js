@@ -1,16 +1,12 @@
-import { items, itemTypes } from "./documents/items.js";
+import { items } from "./documents/items.js";
 
 const header = document.getElementById("artistselectName");
-const divContainer = document.querySelector("landing_page-header");
 const storedName = localStorage.getItem("selectedArtisstName");
 header.textContent = storedName;
-// divContainer.appendChild(storedName)
-// console.log(items.length)
 
-//
+
 const artistItems = items.filter((item) => item.artist === storedName);
-console.log(artistItems);
-const soldItems = artistItems.filter((item) => item.dateSold !== null);
+const soldItems = artistItems.filter((item) => item.dateSold !== null && item.priceSold !== null);
 function calculateTotalItemsSold(items) {
   return `${soldItems.length}/${items.length}`;
 }

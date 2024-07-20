@@ -1,4 +1,4 @@
-//get rtist name from API
+//get artist name from API
 
 const api = "https://jsonplaceholder.typicode.com/users.";
 
@@ -12,18 +12,18 @@ function getArtistName() {
 
 function createList(response) {
   const select= document.getElementById("artistList");
- const artistName = []
+ const allArtistName = []
   select.innerHTML = '<option>Choose</option>';
   
   for (let i = 0; i < response.length; i++) {
     const option = document.createElement('option')
 
-    artistNames = response[i].name
-    artistName.push(artistNames)
+   let artistNames = response[i].name
+    allArtistName.push(artistNames)
     option.value = artistNames
   option.textContent = artistNames
     select.appendChild(option)
-    // option.appendChild(listitem)
+   
     
   }
   localStorage.setItem('artistNames', JSON.stringify(artistName));

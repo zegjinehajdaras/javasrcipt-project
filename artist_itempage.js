@@ -1,5 +1,5 @@
+const itemTypes = ["painting", "sculpture", "digital", "custom"];
 const header = document.getElementById("artistselectName");
-const divContainer = document.querySelector("landing_page-header");
 const storedName = localStorage.getItem("selectedArtisstName");
 header.textContent = storedName;
 
@@ -99,6 +99,17 @@ let currentItemId = null;
 function openModal(mode, item) {
   const modaltittle = document.getElementById("itemModalLabel");
   const btnadd = document.getElementById("addNewItemBtn");
+  const typeDropdown = document.getElementById("picture-type");
+  typeDropdown.innerHTML = "<option>Choose</option>";
+itemTypes.forEach((type) => {
+  const option = document.createElement("option");
+  option.textContent = type;
+  option.value = type;
+  typeDropdown.appendChild(option);
+});
+
+
+
   if (mode === "edit") {
     modaltittle.textContent = "Edit Card";
     btnadd.textContent = "Save Edit";
@@ -120,16 +131,18 @@ document.getElementById("addNewItemBtn").addEventListener("click", (e) => {
 
   const titleinput = document.getElementById("picture-title").value;
   const descinput = document.getElementById("picture-description").value;
-  const type = document.getElementById("picture-type").value;
+  const typeinput = document.getElementById("picture-type").value;
   const imageinput = document.getElementById("picture-image").value;
   const priceinput = document.getElementById("picture-price").value;
   const isPublishedCheckbox = document.getElementById("isPublished").checked;
+
+
 
   if (currentMode === "edit") {
     const item = items.find((item) => item.id === currentItemId);
     item.title =titleinput
     item.description =descinput
-    item.type = type
+    item.type = typeinput
     item.image = imageinput
     item.price = priceinput
     item.isPublished =isPublishedCheckbox
@@ -145,7 +158,7 @@ document.getElementById("addNewItemBtn").addEventListener("click", (e) => {
       isPublished: isPublishedCheckbox,
       dateSold: null,
       priceSold: null,
-      type: type,
+      type: typeinput,
     };
     items.push(newItem);
   }
@@ -153,6 +166,7 @@ document.getElementById("addNewItemBtn").addEventListener("click", (e) => {
   localStorage.setItem("items", JSON.stringify(items));
   createCards();
   document.getElementById("addeditForm").reset();
+  document.getElementById("cardModal").style.display = "none"
 });
 createCards();
 

@@ -48,8 +48,8 @@ body {
   }
   .right_logo img {
     width: 60px;
-    /* margin-right: 30px; */
   }
+
   .carouselseciton .card{
     width: 15rem;
     margin-top:60px;
@@ -58,7 +58,7 @@ body {
 
 }
 
-design_section {
+.design_section {
     width: 95%;
     margin: 1% auto;
     height: 142px;
@@ -92,7 +92,6 @@ design_section {
     font-weight: 700;
     font-family: Roboto;
     font-size: 20px;
-    /* font-weight: 700; */
     line-height: 14.06px;
     text-align: left;
     margin-top: 20px;
@@ -155,9 +154,7 @@ design_section {
     transition: transform 1s;
     object-fit: cover;
   }
-  /* .left_side :hover img {
-    transform: translateZ(20px);
-  } */
+
   
   .sliders_section::before,
   .sliders_section::after {
