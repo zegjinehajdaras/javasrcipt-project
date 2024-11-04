@@ -1,5 +1,5 @@
 if (!localStorage.getItem("artistNames")) {
-    localStorage.setItem("artistNames", JSON.stringify(["Default Artist"]));
+    localStorage.setItem("artistNames", JSON.stringify(artistName));
 }
 const items = JSON.parse(localStorage.getItem("items"))||[];
 const itemTypes = ["painting", "sculpture", "digital", "custom"];
