@@ -1,4 +1,6 @@
-
+if (!localStorage.getItem("artistNames")) {
+    localStorage.setItem("artistNames", JSON.stringify(["Default Artist"]));
+}
 const items = JSON.parse(localStorage.getItem("items"))||[];
 const itemTypes = ["painting", "sculpture", "digital", "custom"];
 function createCradItem(items) {
