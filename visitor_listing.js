@@ -1,5 +1,5 @@
 if (!localStorage.getItem("artistNames")) {
-    localStorage.setItem("artistNames", JSON.stringify(artistName));
+    localStorage.setItem("artistNames", JSON.stringify(["Leanne Graham","Ervin Howell","Clementine Bauch","Patricia Lebsack","Chelsey Dietrich","Mrs. Dennis Schulist","Kurtis Weissnat","Nicholas Runolfsdottir V","Glenna Reichert","Clementina DuBuque"]));
 }
 const items = JSON.parse(localStorage.getItem("items"))||[];
 const itemTypes = ["painting", "sculpture", "digital", "custom"];
